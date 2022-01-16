@@ -46,7 +46,7 @@ for i in range(maxiter):
     ind3=solution.index(tbc3opt[2])
     inds=sorted([ind1,ind2,ind3])
     
-    if inds[2]-inds[1]==1 and inds[1]-inds[0]==1:
+    if inds[2]-inds[0]==2:
         b=solution.copy()
         a=b.pop(inds[0])
         b.insert(inds[1],a)
@@ -59,7 +59,7 @@ for i in range(maxiter):
         b=solution.copy()
         c=solution.copy()
         a=b.pop(inds[0])
-        b.insert(inds[2],a)
+        b.insert(inds[2]-1,a)
         ob=obj(b)
         c[inds[0]:inds[2]]=c[inds[2]-1:inds[0]-1:-1]
         oc=obj(c)
@@ -69,7 +69,7 @@ for i in range(maxiter):
                solution[inds[0]:inds[2]]=solution[inds[2]-1:inds[0]-1:-1]
             else:
                a=solution.pop(inds[0])
-               solution.insert(inds[2],a)
+               solution.insert(inds[2]-1,a)
            
            
     elif inds[2]-inds[1]==1 and inds[1]-inds[0]!=1:
