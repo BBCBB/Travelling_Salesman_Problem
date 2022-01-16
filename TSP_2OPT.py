@@ -54,7 +54,8 @@ for i in range(maxiter):
        solution=sol.copy()
     else:
        sol=solution.copy()
-    
+print('Objective function value: {}',format(obj(solution)))
+print('The optimal sequence of the nodes: {}',format(solution))
 #plot
 G=nx.DiGraph()
 nodes=range(nodeCount)
