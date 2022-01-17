@@ -40,9 +40,9 @@ for i in range(maxiter):
     if sum(o[len(o)-250:len(o)])/250==objval:
         break
     
-    tbc2opt=sorted(random.sample(range(1, nodeCount), 2))
-    ind1=solution.index(tbc2opt[0])
-    ind2=solution.index(tbc2opt[1])
+    tbc2opt=sorted(random.sample(range(1, nodeCount+1), 2))
+    ind1=tbc2opt[0]
+    ind2=tbc2opt[1]
     inds=sorted([ind1,ind2])
     if inds[1]-inds[0]==1:
         a=solution.pop(inds[0])
