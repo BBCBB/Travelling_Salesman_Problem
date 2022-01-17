@@ -26,9 +26,20 @@ def obj(s):
         objective = objective + length(points[s[j]],points[s[j+1]])
     return objective
         
-solution=list(range(1,nodeCount))
-random.shuffle(solution)
-solution.insert(0,0)
+solution=[0]            #creating an initial route based on a greedy algorithm
+for i in solution:
+    l=float("Inf") 
+    for j in range(1,nodeCount):
+        if j in solution:
+            continue
+        else:
+            s=abs(points[i].x-points[j].x)+abs(points[i].y-points[j].y)
+            l=min(l,s)
+            if l==s:
+                ngbr=j
+    solution.append(ngbr)
+    if len(solution)==nodeCount:
+        break
 solution.append(0)
 maxiter=5000
 o=[]
@@ -40,10 +51,10 @@ for i in range(maxiter):
     if sum(o[len(o)-250:len(o)])/250==objval:
         break
     
-    tbc3opt=sorted(random.sample(range(1, nodeCount), 3))
-    ind1=solution.index(tbc3opt[0])
-    ind2=solution.index(tbc3opt[1])
-    ind3=solution.index(tbc3opt[2])
+    tbc3opt=sorted(random.sample(range(1, nodeCount+1), 3))
+    ind1=tbc3opt[0]
+    ind2=tbc3opt[1]
+    ind3=tbc3opt[2]
     inds=sorted([ind1,ind2,ind3])
     
     if inds[2]-inds[0]==2:
