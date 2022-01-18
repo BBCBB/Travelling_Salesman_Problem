@@ -38,9 +38,7 @@ bestval=objval
 for i in range(maxiter):
     iter=i+1
     o.append(objval)
-    if sum(o[len(o)-250:len(o)])/250==objval:
-        break
-    
+
     tbc2opt=sorted(random.sample(range(1, nodeCount+1), 2))
     ind1=tbc2opt[0]
     ind2=tbc2opt[1]
