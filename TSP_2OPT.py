@@ -33,9 +33,10 @@ solution.append(0)
 maxiter=15000
 o=[]
 sol=solution.copy()
+objval=obj(solution)
+bestval=objval
 for i in range(maxiter):
     iter=i+1
-    objval=obj(solution)
     o.append(objval)
     if sum(o[len(o)-250:len(o)])/250==objval:
         break
@@ -54,8 +55,13 @@ for i in range(maxiter):
        solution=sol.copy()
     else:
        sol=solution.copy()
-print('Objective function value: {}',format(obj(solution)))
-print('The optimal sequence of the nodes: {}',format(solution))
+    objval=obj(solution)
+    if objval<bestval:
+        bestsol=solution.copy()
+        bestval=objval
+    
+print('Objective function value: {}',format(bestval))
+print('The optimal sequence of the nodes: {}',format(bestsol))
 #plot
 G=nx.DiGraph()
 nodes=range(nodeCount)
