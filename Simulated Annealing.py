@@ -177,9 +177,7 @@ for iteration in range(1,maxiter+1):
           tbc3opt.sort()
           tbc3opt.append(nodeCount)
     else:
-        r=random.randint(1, nodeCount)
-        tbc3opt=random.sample(range(r-int(trp*r)+1,r+(int(trp*(nodeCount-r)))-1), 2)
-        tbc3opt.append(r)
+        tbc3opt=random.sample(range(1,nodeCount+1), 3)
         tbc3opt.sort()
     
     ind1=tbc3opt[0]
