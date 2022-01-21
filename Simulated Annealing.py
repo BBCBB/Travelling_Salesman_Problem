@@ -33,14 +33,6 @@ def obj(s,k):
             rec.append(l)
     return objective
  
-def delta(y,z,s):
-    imp=0
-    if z!=nodeCount:
-        z=z+1
-    for j in range(y-1,z):
-        l= length(points[s[j]],points[s[j+1]])
-        imp = imp + l
-    return imp    
 
 def deltap(y,w,z,s):
     imp=0
@@ -53,9 +45,6 @@ def deltap(y,w,z,s):
             length(points[s[w-1]],points[s[w]])
     return imp   
 
-# solution=list(range(1,nodeCount))
-# random.shuffle(solution)
-# solution.insert(0,0)
 solution=[0]
 for i in solution:
     l=float("Inf") 
