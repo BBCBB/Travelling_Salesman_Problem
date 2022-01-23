@@ -3,6 +3,7 @@
 This repo is under review, making more improvements.
 In **TSP_3OPT** the algorithms strives to choose between 3-opt neighborhoods and 2-opt sub-neighborhoods based the improvement they offer in each iteration. To solve TSP, you can choose among 2-opt, 3-opt, and Simulated Annealing methods implemented on a K-OPT (with K=3). The main difference between these algorithms is how much they can reach the absolute solution to the problem. The Simulated Annealing method will be uploaded to the repository as soon as possible.
 
+The performance of algorithm highly depends on the parameters of simulated annealing and how you update these parameters.
 
 **ATTENTION!** The **Simulated Annealing** code is more efficient than others to tackle large-scale problems, and it is being improved continuously.
 Also, comments will be added to the code as soon as possible.
