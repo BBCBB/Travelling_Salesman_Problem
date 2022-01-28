@@ -11,7 +11,7 @@ Point = namedtuple("Point", ['x', 'y'])
 def length(point1, point2):
     return math.sqrt((point1.x - point2.x)**2 + (point1.y - point2.y)**2)
 
-f = open(r"C:\\Users\MrNobody\Desktop\Discrete Optimization\HW4-TSP\data\tsp_100_1","r")
+f = open(r"C:\\Users\data_file","r")
 
 input_data = ''.join(f.readlines())
 lines = input_data.split('\n')
