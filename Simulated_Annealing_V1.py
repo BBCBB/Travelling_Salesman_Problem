@@ -231,7 +231,6 @@ for iteration in range(1,maxiter+1):
                 solution.insert(inds[0],a)
                 objval=objval-oo+ob
     else:
-        # oo=deltap(inds[0],inds[1],inds[2],solution)
         b=solution.copy()
         b[inds[0]:inds[2]]=b[inds[2]-1:inds[0]-1:-1]
         ob=deltap(inds[0],inds[0]+inds[2]-inds[1],inds[2],b)
