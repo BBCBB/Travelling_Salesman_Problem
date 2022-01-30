@@ -44,9 +44,6 @@ def deltap(y,w,z,s):
             length(points[s[w-1]],points[s[w]])
     return imp   
 
-# solution=list(range(1,nodeCount))
-# random.shuffle(solution)
-# solution.insert(0,0)
 solution=[0]
 for i in solution:
     l=float("Inf") 
@@ -64,32 +61,11 @@ for i in solution:
 
 solution.append(0)
 sol0=solution.copy()
-maxiter=80000
-if nodeCount<80:
-    lim=8000
-    t=2
-    maxiter=50000
-    maxthreshold=250
-elif nodeCount<150:
-    lim=6000
-    t=5
-    maxiter=100000
-    maxthreshold=50
-elif nodeCount<600:
-    lim=8000
-    t=10
-    maxiter=110000
-    maxthreshold=250
-elif nodeCount<2000:
-    lim=14000
-    t=10
-    maxiter=170000
-    maxthreshold=250
-else:
-    lim=16000
-    t=10
-    maxiter=100000
-    maxthreshold=1000
+lim=8000
+t=2
+maxiter=50000
+maxthreshold=250
+
 t0=t
 
 start_time = time.time()
@@ -99,9 +75,7 @@ bestval=objval
 bestsol=solution.copy()
 o=[objval]
 mo=[]
-yy=[objval]
 for iteration in range(1,maxiter+1):
-    yy.append(obj(solution,0))
     o.append(objval)
     mm=(o[iteration]-o[iteration-1])
     mo.append(mm)
@@ -123,8 +97,7 @@ for iteration in range(1,maxiter+1):
             t=t0*2
     else:
         t=0.95*t
-    if iteration>2000:
-        
+    if iteration>2000
         trs=((iteration-1000)/maxiter)*120       #pruning the search space based on the longest distance between couple of nodes
     else:
         trs=1
@@ -151,7 +124,6 @@ for iteration in range(1,maxiter+1):
             a=solution.pop(inds[0])
             solution.insert(inds[1],a)
             objval=objval-oo+ox
-            
             
     else:
         oo=deltap(inds[0],-1,inds[1],solution)
@@ -184,9 +156,7 @@ for iteration in range(1,maxiter+1):
           tbc3opt.sort()
           tbc3opt.append(nodeCount)
     else:
-        # r=random.randint(1, nodeCount)
         tbc3opt=random.sample(range(1,nodeCount+1), 3)
-        # tbc3opt.append(r)
         tbc3opt.sort()
     
     ind1=tbc3opt[0]
