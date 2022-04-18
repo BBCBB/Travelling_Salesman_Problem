@@ -67,14 +67,14 @@ for i in solution:
 solution.append(0)                                               # transforming the initial solution to a cycle
 # determining different parameters based the size of the problem
 if nodeCount<80:
-    t=5                                                         # initial temperature of the system
+    t=5                                                          # initial temperature of the system
     maxiter=500                                                  # number of different temperatures the system will experience
-    m=400
-    trenew=1000
-    cp=0.99
-    ngbr=0.25
+    m=400                                                        # number of iterations over a specific temperature
+    trenew=1000                                                  # a threshold to warm up the system when the algorithm's stuck in a local optima
+    cp=0.99                                                      # cooling parameter
+    ngbr=0.25                                                    # the percentage of nodes close to a random node to be investigated to make a move (neighborhood)
 elif nodeCount<150:
-    t=20                                                        # initial temperature of the system
+    t=20                                                         # initial temperature of the system
     maxiter=550                                                  # number of different temperatures the system will experience
     m=650
     trenew=1000
@@ -88,14 +88,14 @@ elif nodeCount<500:
     cp=0.95
     ngbr=0.15
 elif nodeCount<1000:
-    t=20                                                        # initial temperature of the system
+    t=20                                                         # initial temperature of the system
     maxiter=800                                                  # number of different temperatures the system will experience
     m=900
     trenew=2000
     cp=0.99
     ngbr=0.08
 elif nodeCount<2000:
-    t=20                                                        # initial temperature of the system
+    t=20                                                         # initial temperature of the system
     maxiter=900                                                  # number of different temperatures the system will experience
     m=1000
     trenew=3000
